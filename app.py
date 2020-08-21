@@ -20,11 +20,6 @@ slack_web_client = WebClient(token=os.environ['SLACK_BOT_TOKEN'])
 onboarding_tutorials_sent = {}
 
 
-@app.route('/')
-def index():
-    return 'Hello World'
-
-
 def start_onboarding(user_id: str, channel: str):
     # Create a new onboarding tutorial.
     onboarding_tutorial = OnboardingTutorial(channel)
