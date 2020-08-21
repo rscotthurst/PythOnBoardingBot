@@ -5,8 +5,6 @@ from slack import WebClient
 from slackeventsapi import SlackEventAdapter
 from onboarding_tutorial import OnboardingTutorial
 
-import ssl as ssl_lib
-import certifi
 
 # Initialize a Flask app to host the events adapter
 app = Flask(__name__)
@@ -150,5 +148,4 @@ if __name__ == "__main__":
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
     logger.addHandler(logging.StreamHandler())
-    ssl_context = ssl_lib.create_default_context(cafile=certifi.where())
     app.run(port=3000)
